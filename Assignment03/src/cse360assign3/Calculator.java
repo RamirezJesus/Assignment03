@@ -3,6 +3,7 @@ package cse360assign3;
 /**
  * CSE360 Spring 2016
  * Assignment 03
+ * https://github.com/hayzoos81/Assignment03
  * 
  * Class that performs the standard operations of a calculator.
  * 
@@ -16,6 +17,7 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String history; 
 	
 	/**
 	 * Calculator constructor. Initializes variable total to zero
@@ -24,6 +26,7 @@ public class Calculator {
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 
 	/**
@@ -43,6 +46,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/**
@@ -52,6 +56,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
@@ -61,6 +66,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/**
@@ -76,6 +82,7 @@ public class Calculator {
 		else {
 			total = total / value;
 		}
+		history = history + " / " + value;
 	}
 	
 	/**
@@ -85,6 +92,6 @@ public class Calculator {
 	 * @return - a string that contains the previous operations performed
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
